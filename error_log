@@ -1,0 +1,1489 @@
+[29-Jun-2022 15:42:29 UTC] PHP Warning:  simplexml_load_file(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/othellodeemi/public_html/woocommerce/wp-content/plugins/elementor/core/files/file-types/svg.php on line 233
+[29-Jun-2022 15:42:29 UTC] PHP Warning:  simplexml_load_file(https://othello-deemi.netmatters-scs.co.uk/woocommerce/wp-content/uploads/2022/06/logo-mobile.svg): failed to open stream: no suitable wrapper could be found in /home/othellodeemi/public_html/woocommerce/wp-content/plugins/elementor/core/files/file-types/svg.php on line 233
+[29-Jun-2022 15:42:29 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load external entity &quot;https://othello-deemi.netmatters-scs.co.uk/woocommerce/wp-content/uploads/2022/06/logo-mobile.svg&quot; in /home/othellodeemi/public_html/woocommerce/wp-content/plugins/elementor/core/files/file-types/svg.php on line 233
+[30-Jun-2022 07:59:57 UTC] WordPress database error Unknown column 'gross_total' in 'wp_wc_order_stats' for query ALTER TABLE wp_wc_order_stats CHANGE COLUMN `gross_total` `total_sales` double DEFAULT 0 NOT NULL made by do_action_ref_array('action_scheduler_run_queue'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler_QueueRunner->run, ActionScheduler_QueueRunner->do_batch, ActionScheduler_Abstract_QueueRunner->process_action, ActionScheduler_Action->execute, do_action_ref_array('woocommerce_run_update_callback'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::run_update_callback, wc_admin_update_0230_rename_gross_total
+[30-Jun-2022 08:01:57 UTC] WordPress database error Can't DROP 'total_sales'; check that column/key exists for query ALTER TABLE wp_wc_order_stats DROP COLUMN `total_sales` made by do_action_ref_array('action_scheduler_run_queue'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler_QueueRunner->run, ActionScheduler_QueueRunner->do_batch, ActionScheduler_Abstract_QueueRunner->process_action, ActionScheduler_Action->execute, do_action_ref_array('woocommerce_run_update_callback'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::run_update_callback, wc_admin_update_0230_rename_gross_total
+[30-Jun-2022 08:01:57 UTC] WordPress database error Unknown column 'gross_total' in 'wp_wc_order_stats' for query ALTER TABLE wp_wc_order_stats CHANGE COLUMN `gross_total` `total_sales` double DEFAULT 0 NOT NULL made by do_action_ref_array('action_scheduler_run_queue'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler_QueueRunner->run, ActionScheduler_QueueRunner->do_batch, ActionScheduler_Abstract_QueueRunner->process_action, ActionScheduler_Action->execute, do_action_ref_array('woocommerce_run_update_callback'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::run_update_callback, wc_admin_update_0230_rename_gross_total
+[30-Jun-2022 08:01:57 UTC] WordPress database error Can't DROP 'is_primary'; check that column/key exists for query ALTER TABLE wp_wc_admin_note_actions DROP COLUMN `is_primary` made by do_action_ref_array('action_scheduler_run_queue'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler_QueueRunner->run, ActionScheduler_QueueRunner->do_batch, ActionScheduler_Abstract_QueueRunner->process_action, ActionScheduler_Action->execute, do_action_ref_array('woocommerce_run_update_callback'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::run_update_callback, wc_admin_update_340_remove_is_primary_from_note_action
+[30-Jun-2022 08:01:57 UTC] PHP Fatal error:  Cannot redeclare filter_created_pages() (previously declared in /home/othellodeemi/public_html/woocommerce/wp-content/plugins/woocommerce/includes/wc-update-functions.php:2291) in /home/othellodeemi/public_html/woocommerce/wp-content/plugins/woocommerce/includes/wc-update-functions.php on line 2291
+[30-Jun-2022 08:03:58 UTC] WordPress database error Can't DROP 'is_primary'; check that column/key exists for query ALTER TABLE wp_wc_admin_note_actions DROP COLUMN `is_primary` made by do_action_ref_array('action_scheduler_run_queue'), WP_Hook->do_action, WP_Hook->apply_filters, ActionScheduler_QueueRunner->run, ActionScheduler_QueueRunner->do_batch, ActionScheduler_Abstract_QueueRunner->process_action, ActionScheduler_Action->execute, do_action_ref_array('woocommerce_run_update_callback'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::run_update_callback, wc_admin_update_340_remove_is_primary_from_note_action
+[30-Jun-2022 09:37:21 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:20' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:21 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:20' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:21 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:20' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:21 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:20' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:38' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:38' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:38' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[30-Jun-2022 09:37:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-06-30 10:37:38' AND wp_wc_order_stats.date_created >= '2022-06-30 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-03 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-03 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-03 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-03 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 09:14:48' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 09:14:48' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-03 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-03 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-03 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-03 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 09:14:48' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 08:14:50 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 09:14:48' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 11:58:48 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 12:58:47' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 11:58:48 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 12:58:47' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 11:58:48 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 12:58:47' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 11:58:48 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 12:58:47' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 13:15:51 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 14:15:50' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 13:15:51 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 14:15:50' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 13:15:51 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 14:15:50' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[04-Jul-2022 13:15:51 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 14:15:50' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-04 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-04 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 08:27:30' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 08:27:30' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 08:27:30' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[05-Jul-2022 07:27:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 08:27:30' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:40:29' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:40:29' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:40:29' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:40:29' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:40:31 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-05 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-05 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:42:06 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:42:05' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:42:06 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:42:05' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:42:06 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:42:05' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[06-Jul-2022 08:42:06 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-06 09:42:05' AND wp_wc_order_stats.date_created >= '2022-07-06 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:38' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:38' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:38' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:39 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:38' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:40 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-10 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-10 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:40 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-10 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-10 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:40 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-10 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-10 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:40 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-10 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-10 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:43 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:42' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:43 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:42' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:43 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:42' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[11-Jul-2022 07:43:43 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 08:43:42' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-12 08:57:55' AND wp_wc_order_stats.date_created >= '2022-07-12 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-12 08:57:55' AND wp_wc_order_stats.date_created >= '2022-07-12 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-12 08:57:55' AND wp_wc_order_stats.date_created >= '2022-07-12 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-12 08:57:55' AND wp_wc_order_stats.date_created >= '2022-07-12 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Revenue\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Revenue\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[12-Jul-2022 07:57:57 UTC] WordPress database error Unknown column 'wp_wc_order_stats.total_sales' in 'field list' for query 
+			SELECT
+				DATE_FORMAT(wp_wc_order_stats.date_created, '%x-%v') AS time_interval , MAX(wp_wc_order_stats.date_created) AS datetime_anchor , SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) as orders_count, SUM(wp_wc_order_stats.num_items_sold) as num_items_sold, ( SUM(wp_wc_order_stats.total_sales) + COALESCE( SUM(discount_amount), 0 ) - SUM(wp_wc_order_stats.tax_total) - SUM(wp_wc_order_stats.shipping_total) + ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) ) as gross_sales, SUM(wp_wc_order_stats.total_sales) AS total_sales, COALESCE( SUM(discount_amount), 0 ) AS coupons, COALESCE( coupons_count, 0 ) as coupons_count, ABS( SUM( CASE WHEN wp_wc_order_stats.net_total < 0 THEN wp_wc_order_stats.net_total ELSE 0 END ) ) AS refunds, SUM(wp_wc_order_stats.tax_total) AS taxes, SUM(wp_wc_order_stats.shipping_total) AS shipping, SUM(wp_wc_order_stats.net_total) AS net_revenue, SUM( wp_wc_order_stats.num_items_sold ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_items_per_order, SUM( wp_wc_order_stats.net_total ) / SUM( CASE WHEN wp_wc_order_stats.parent_id = 0 THEN 1 ELSE 0 END ) AS avg_order_value, COUNT( DISTINCT( wp_wc_order_stats.customer_id ) ) as total_customers
+			FROM
+				wp_wc_order_stats
+				LEFT JOIN (
+						SELECT
+							order_id,
+							SUM(discount_amount) AS discount_amount,
+							COUNT(DISTINCT coupon_id) AS coupons_count
+						FROM
+							wp_wc_order_coupon_lookup
+						GROUP BY
+							order_id
+						) order_coupon_lookup
+						ON order_coupon_lookup.order_id = wp_wc_order_stats.order_id
+			WHERE
+				1=1
+				AND ( wp_wc_order_stats.status NOT IN ( 'wc-auto-draft','wc-trash','wc-pending','wc-failed','wc-cancelled','wc-checkout-draft' ) ) AND wp_wc_order_stats.date_created <= '2022-07-11 23:59:59' AND wp_wc_order_stats.date_created >= '2022-07-11 00:00:00'
+		
+				GROUP BY
+					time_interval
+			
+				ORDER BY
+					time_interval desc
+			LIMIT 0,10 made by require('wp-blog-header.php'), wp, WP->main, WP->parse_request, do_action_ref_array('parse_request'), WP_Hook->do_action, WP_Hook->apply_filters, rest_api_loaded, WP_REST_Server->serve_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\PerformanceIndicators\Controller->get_stats_data, rest_do_request, WP_REST_Server->dispatch, WP_REST_Server->respond_to_request, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Controller->get_items, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\Query->get_data, WC_Data_Store->__call, Automattic\WooCommerce\Admin\API\Reports\Orders\Stats\DataStore->get_data
+[13-Jul-2022 11:16:10 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[13-Jul-2022 11:16:10 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 08:19:06 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 08:19:06 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 14:17:47 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 14:17:47 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 14:27:54 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[15-Jul-2022 14:27:54 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.

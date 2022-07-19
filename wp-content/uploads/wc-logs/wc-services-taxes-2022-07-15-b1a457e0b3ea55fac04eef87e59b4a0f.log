@@ -1,0 +1,2 @@
+07-15-2022 @ 15:30:14 - Error retrieving the tax rates. Received (401): {"statusCode":401,"error":"Unauthorized","message":"Invalid credentials","attributes":{"error":"Invalid credentials"}} (WCS Tax)
+07-15-2022 @ 15:30:17 - Error retrieving the tax rates. Received (401): {"statusCode":401,"error":"Unauthorized","message":"Invalid credentials","attributes":{"error":"Invalid credentials"}} (WCS Tax)
